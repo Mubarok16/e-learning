@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-    <main class="ml-64 pt-24 pb-12 px-12 min-h-screen">
+    <main class="pt-12 pb-12 px-12 min-h-screen">
         <!-- Header Section -->
         <header class="mb-12">
             <h2 class="font-display text-4xl font-black text-on-surface tracking-tight mb-2 uppercase">Academic Performance

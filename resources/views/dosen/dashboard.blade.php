@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @Section('content')
-<main class="ml-72 min-h-screen">
+<main class="min-h-screen">
     <section class="p-12 max-w-7xl mx-auto space-y-12">
         <header class="flex flex-col gap-2">
             <span class="font-sans uppercase tracking-[0.2em] text-[11px] font-extrabold text-primary">Academic

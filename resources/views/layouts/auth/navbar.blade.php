@@ -10,20 +10,20 @@
       </div> --}}
 
       <div class="flex items-center gap-6">
-          <!-- Tombol Menu / Toggle Sidebar -->
-          <button onclick="toggleSidebar()"
-              class="p-2 hover:bg-slate-100 rounded-full transition-colors flex items-center justify-center">
-              <span class="material-symbols-outlined text-purple-950 text-2xl">menu</span>
-          </button>
-
           <!-- Logo & Nama Site -->
           <div class="flex items-center gap-3">
               <!-- Logo (Contoh menggunakan Icon, bisa ganti ke <img>) -->
               <div class="bg-purple-950 p-1.5 rounded-lg flex items-center justify-center">
                   <span class="material-symbols-outlined text-white text-xl">auto_stories</span>
               </div>
-              <span class="text-xl font-bold text-purple-950 tracking-tight">LMS FT-UNWIR</span>
+              <span class="text-xl font-bold text-purple-950 tracking-tight">LMS FT UNWIR</span>
           </div>
+
+          <!-- Tombol Menu / Toggle Sidebar -->
+          <button onclick="toggleSidebar(event)"
+              class="p-2 hover:bg-slate-100 rounded-full transition-colors flex items-center justify-center">
+              <span class="material-symbols-outlined text-purple-950 text-2xl">menu</span>
+          </button>
 
           <!-- Search Bar -->
           <div class="hidden md:flex items-center bg-slate-100 px-4 py-2 rounded-xl w-80 ml-2">
@@ -44,13 +44,6 @@
               </button>
           </div>
 
-          @if (Auth::user()->role == 'mahasiswa')
-          @endif
-          @if (Auth::user()->role == 'admin')
-          @endif
-          @if (Auth::user()->role == 'dosen')
-          @endif
-
           <!-- user info -->
           <details class="group relative list-none">
 
@@ -58,8 +51,21 @@
               <summary
                   class="flex items-center gap-3 border-l border-outline-variant/20 pl-6 cursor-pointer list-none focus:outline-none [&::-webkit-details-marker]:hidden">
                   <div class="text-right hidden sm:block">
-                      <p class="text-xs font-bold text-on-surface uppercase tracking-widest">Julian Vance</p>
-                      <p class="text-[10px] text-slate-500 uppercase tracking-tighter">Honors Program</p>
+                      @if (Auth::user()->role == 'mahasiswa')
+                          <p class="text-xs font-bold text-on-surface uppercase tracking-widest">
+                              {{ Auth::user()->name }}</p>
+                          <p class="text-[10px] text-slate-500 uppercase tracking-tighter">{{ Auth::user()->role }}</p>
+                      @endif
+                      @if (Auth::user()->role == 'admin')
+                          <p class="text-xs font-bold text-on-surface uppercase tracking-widest">
+                              {{ Auth::user()->name }}</p>
+                          <p class="text-[10px] text-slate-500 uppercase tracking-tighter">{{ Auth::user()->role }}</p>
+                      @endif
+                      @if (Auth::user()->role == 'dosen')
+                          <p class="text-xs font-bold text-on-surface uppercase tracking-widest">
+                              {{ Auth::user()->name }}</p>
+                          <p class="text-[10px] text-slate-500 uppercase tracking-tighter">{{ Auth::user()->role }} </p>
+                      @endif
                   </div>
                   <img alt="Student Profile Avatar"
                       class="w-10 h-10 rounded-full border-2 border-primary-fixed object-cover"

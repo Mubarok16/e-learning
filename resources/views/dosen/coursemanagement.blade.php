@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-72 min-h-screen">
+<main class="min-h-screen">
     <!-- TopAppBar -->
     
     <!-- Editorial Content -->

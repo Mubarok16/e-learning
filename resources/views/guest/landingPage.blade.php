@@ -3,17 +3,17 @@
 
 {{-- isi kontent landing page guest --}}
 @section('content')
-    <main class="pt-8">
+    <main class="">
         <!-- Hero Section -->
         <section class="relative px-6 py-12 md:py-24 max-w-screen-2xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div class="lg:col-span-6 z-10">
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold tracking-widest uppercase mb-6">
                         Excellence in Digital Learning
                     </span>
                     <h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tighter">
-                        Pusat Pembelajaran Digital <span class="text-primary italic">Fakultas teknik universitas
+                        Platform LMS <span class="text-primary italic">Fakultas teknik universitas
                             wiralodra</span>
                     </h1>
                     <p class="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed font-body">

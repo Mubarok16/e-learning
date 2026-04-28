@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="lg:ml-64 pt-24 px-8 pb-12 min-h-screen">
+<main class="pt-12 px-8 pb-12 min-h-screen">
     <!-- Header / Welcome Section -->
     <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div class="max-w-2xl">

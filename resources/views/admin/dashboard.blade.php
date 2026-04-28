@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-72 p-12 min-h-screen">
+<main class="p-12 min-h-screen">
     <!-- Welcome Hero Section -->
     <section
         class="mb-16 relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-12 text-white shadow-2xl">

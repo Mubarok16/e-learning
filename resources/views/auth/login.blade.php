@@ -47,15 +47,15 @@
         </div>
     </form> --}}
 @section('content')
-    <main class="flex-grow pt-28 pb-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+    <main class="flex-grow pt-24 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
 
             <!-- Hero Content -->
             <div class="lg:col-span-7 space-y-8">
                 <div class="space-y-4">
                     <span class="font-label text-xs font-bold tracking-[0.2em] text-primary uppercase">Welcome Back</span>
                     <h1
-                        class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-tight leading-[1.1]">
+                        class="font-headline text-5xl md:text-6xl font-extrabold text-on-surface tracking-tight leading-[1.1]">
                         Curating Your <span class="text-primary italic">Academic</span> Journey.
                     </h1>
                     <p class="text-on-surface-variant text-lg md:text-xl max-w-xl leading-relaxed">
@@ -206,7 +206,7 @@
                             </div>
                         </form> --}}
 
-                        <div class="mt-12 pt-8 space-y-4 border-t border-transparent relative">
+                        {{-- <div class="mt-12 pt-8 space-y-4 border-t border-transparent relative">
                             <!-- Faux border using tonal transition as per system rule -->
                             <div
                                 class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent">
@@ -228,7 +228,7 @@
                                     <span class="font-label text-xs font-semibold text-on-surface">Library Access</span>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

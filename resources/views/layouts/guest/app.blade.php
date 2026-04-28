@@ -17,7 +17,9 @@
     @include('layouts.guest.navbar')
 
     <!-- content landing page (index guest)-->
-    @yield('content')
+    <div class="py-6">
+        @yield('content')
+    </div>
 
     <!-- Sisipkan footer -->
     @include('layouts.guest.footer')

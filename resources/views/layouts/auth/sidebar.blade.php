@@ -1,13 +1,13 @@
- <aside class="h-full w-64 fixed left-0 top-0 pt-20 bg-[#f3f4f5] flex flex-col lg:flex">
+ <aside id="main-sidebar"
+     class="h-full w-64 fixed left-0 top-0 pt-20 bg-[#f3f4f5] flex flex-col z-40 border-r shadow-2xl transition-transform duration-300 ease-in-out -translate-x-full">
      <div class="px-8 mb-8">
          <h2 class="font-serif text-lg text-purple-950">Curator View</h2>
          <p class="font-sans uppercase text-[10px] tracking-widest font-medium text-slate-500">Semester II, 2024</p>
      </div>
-     <nav class="flex flex-col h-full space-y-2 py-6">
+     <nav class="flex flex-col h-full space-y-2 py-6 overflow-hidden">
          @if (Auth::user()->role == 'mahasiswa')
              <!-- Active Tab -->
-             <a class="{{ $page == 'page-dashboard' ? 'bg-white text-purple-900 rounded-l-full ml-4 pl-4 py-3 shadow-sm flex items-center gap-4 transition-all duration-300 translate-x-1' : 'text-slate-500 hover:text-purple-700 ml-4 pl-4 py-3 flex items-center gap-4 transition-all duration-300 hover:bg-white/50' }}
-            "
+             <a class="{{ $page == 'page-dashboard' ? 'bg-white text-purple-900 rounded-l-full ml-4 pl-4 py-3 shadow-sm flex items-center gap-4 transition-all duration-300 translate-x-1' : 'text-slate-500 hover:text-purple-700 ml-4 pl-4 py-3 flex items-center gap-4 transition-all duration-300 hover:bg-white/50' }}"
                  href="{{ route('dashboard') }}">
                  <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
                  <span class="font-sans uppercase text-xs tracking-widest font-medium">Dashboard</span>

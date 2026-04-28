@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-64 min-h-screen relative">
+<main class="min-h-screen relative">
     <!-- Canvas -->
     <div class="pt-24 px-12 pb-20 max-w-7xl mx-auto">
         <!-- Hero Section -->

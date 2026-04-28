@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-64 min-h-screen">
+<main class="min-h-screen">
     <!-- Canvas Content -->
     <div class="px-12 py-16 max-w-7xl mx-auto">
         <!-- Hero Header Section -->

@@ -24,4 +24,42 @@
     </div>
 </body>
 
+<script>
+    const sidebar = document.getElementById('main-sidebar');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+
+    function toggleSidebar(e) {
+        if (e) e.stopPropagation();
+        
+        // Cek apakah sidebar sedang tersembunyi
+        if (sidebar.classList.contains('-translate-x-full')) {
+            openSidebar();
+        } else {
+            closeSidebar();
+        }
+    }
+
+    function openSidebar() {
+        sidebar.classList.remove('-translate-x-full');
+        sidebar.classList.add('translate-x-0');
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('translate-x-0');
+        sidebar.classList.add('-translate-x-full');
+    }
+
+    // Klik di mana saja untuk menutup
+    document.addEventListener('click', function(event) {
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnButton = toggleBtn.contains(event.target);
+
+        if (!isClickInsideSidebar && !isClickOnButton) {
+            closeSidebar();
+        }
+    });
+</script>
+
+
+
 </html>

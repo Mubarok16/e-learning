@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mahasiswa\AssignmentsController;
 use App\Http\Controllers\mahasiswa\GradesController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('guest.landingpage');
@@ -12,7 +13,7 @@ Route::get('/', function () {
 
 Route::get('mahasiswa/dashboard', function () {
 
-    if (auth()->user()->role !== 'mahasiswa') {
+    if (Auth::user()->role !== 'mahasiswa') {
         return redirect()->route('look'); // Lempar ke rute dosen jika dia bukan mahasiswa
     }
 
@@ -23,7 +24,7 @@ Route::get('mahasiswa/dashboard', function () {
 
 Route::get('dosen/dashboard', function () {
 
-    if (auth()->user()->role !== 'dosen') {
+    if (Auth::user()->role !== 'dosen') {
         return redirect()->route('admin.dashboard'); // Lempar ke rute mahasiswa jika dia bukan dosen
     }
 
@@ -36,7 +37,7 @@ Route::get('dosen/dashboard', function () {
 // admin
 Route::get('admin/dashboard', function () {
 
-    if (auth()->user()->role !== 'admin') {
+    if (Auth::user()->role !== 'admin') {
         return redirect()->route('dashboard'); // Lempar ke rute mahasiswa jika dia bukan dosen
     }
 
@@ -51,32 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
-    // // doen ====================================================
-    // Route::get('/coursemanagement', function () {
-    //     $page = 'page-coursemanagement';
-    //     return view('dosen.coursemanagement', compact('page'));
-    // })->name('coursemanagement');
-    
-    // Route::get('/grading', function () {
-    //     $page = 'page-grading';
-    //     return view('dosen.grading', compact('page'));
-    // })->name('grading');
-
-    // atmin ====================================================
-    // Route::get('/coursemanagementadmin', function () {
-    //     $page = 'page-coursemanagementadmin';
-    //     return view('admin.coursemanagement', compact('page'));
-    // })->name('coursemanagementadmin');
-    
-    // Route::get('/usermanagement', function () {
-    //     $page = 'page-usermanagement';
-    //     return view('admin.usermanagement', compact('page'));
-    // })->name('usermanagementadmin');
-    
 });
 
-// ========================================================= mahasiswa ====================================================
+// ================================================ hanya mahasiswa yg akses ====================================================
 Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(function () {
     Route::get('dashboard/course', [CourseController::class, 'PageCourse'])->name('course.page.mhs');
     Route::get('dashboard/assignments', [AssignmentsController::class, 'PageAssignments'])->name('assignments.page.mhs');
@@ -84,7 +62,7 @@ Route::middleware(['auth', 'role:mahasiswa'])->prefix('mahasiswa')->group(functi
 
 });
 
-// ========================================================= doen ====================================================
+// ========================================================= hanya dosen yg akses ====================================================
 Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
     Route::get('/course-management', function () {
         $page = 'page-coursemanagement';
@@ -98,7 +76,7 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->group(function () {
 
 });
 
-// ============================================================= admin ====================================================
+// ========================================================= hanya admin yg akses ====================================================
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
     Route::get('/course-managementadmin', function () {
         $page = 'page-coursemanagementadmin';

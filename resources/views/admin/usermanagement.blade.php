@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-64 min-h-screen transition-all duration-300">
+<main class="min-h-screen transition-all duration-300">
     <!-- TopNavBar -->
    
     <div class="p-12 max-w-7xl mx-auto">

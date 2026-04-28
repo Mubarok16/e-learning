@@ -1,6 +1,6 @@
 @extends('layouts.auth.app')
 @section('content')
-<main class="ml-72 min-h-screen p-12">
+<main class="min-h-screen p-12">
     <!-- Top Navigation Shell -->
     
     <!-- Page Hero / Introduction -->
